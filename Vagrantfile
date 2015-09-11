@@ -24,6 +24,9 @@ Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/trusty64"
 
   config.vm.provider "virtualbox" do |v|
+    unless Vagrant.has_plugin?("vagrant-vbguest")
+      raise "Vagrant plugin 'vagrant-vbguest' is not installed! You must run 'vagrant plugin install vagrant-vbguest'! The 'vagrant-vbguest' plugin keeps your VirtualBox Guest Additions up to date in this box."
+    end
     v.memory = 1536
     v.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root", "1"]
   end
