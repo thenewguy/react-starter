@@ -44,6 +44,7 @@ cd /vagrant
 ```
 
 NOTE:
+    
     On Windows `vagrant up` should be run with
     administrative privileges (e.g. from an elevated
     command prompt opened via the right click `Run
@@ -51,6 +52,7 @@ NOTE:
     symlinking.  Otherwise the box will fail!
 
 NOTE2:
+    
     On Windows, if you have installed git, you can
     use the included `vagrant_ssh.bat` file to open
     an ssh connection to your box.  Just replace the
