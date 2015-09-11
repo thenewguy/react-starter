@@ -51,13 +51,6 @@ NOTE:
     as administrator` context menu action) to allow
     symlinking.  Otherwise the box will fail!
 
-NOTE2:
-    
-    On Windows, if you have installed git, you can
-    use the included `vagrant_ssh.bat` file to open
-    an ssh connection to your box.  Just replace the
-    `vagrant ssh` command above with `vagrant_ssh`.
-
 ## Development server
 
 ``` text
