@@ -16,16 +16,25 @@ setlocal EnableDelayedExpansion
 set ABS_DIR=%~dp0
 set ABS_PATH=%~f0
 set DO_ELEVATE=""
-set NEEDS_ELEVATE="0"
+set NEEDS_ELEVATE="1"
 set IS_ELEVATED="0"
 set PROXY_ARGS=%*
 set CLOSE_WINDOW="0"
 
-if "%1" == "up" (
-    REM // UP NEEDS TO BE ELEVATED FOR SYMLINKS TO WORK
-    REM // ALSO REQUIRED FOR NPM-DEBUG.LOG TO BE WRITTEN
-    REM // /vagrant ON BOX FILESYSTEM
-    set NEEDS_ELEVATE="1"
+if "%1" == "-h" (
+    set NEEDS_ELEVATE="0"
+)
+if "%1" == "--help" (
+    set NEEDS_ELEVATE="0"
+)
+if "%1" == "-v" (
+    set NEEDS_ELEVATE="0"
+)
+if "%1" == "--version" (
+    set NEEDS_ELEVATE="0"
+)
+if "%1" == "version" (
+    set NEEDS_ELEVATE="0"
 )
 
 :: Check if we are elevated
