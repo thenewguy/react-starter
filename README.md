@@ -49,7 +49,8 @@ NOTE:
     administrative privileges (e.g. from an elevated
     command prompt opened via the right click `Run
     as administrator` context menu action) to allow
-    symlinking.  Otherwise the box will fail!
+    symlinking.  Otherwise the box will fail! The
+    included `vagrant.bat` handles this automatically.
 
 ## Development server
 
