@@ -9,9 +9,9 @@ shopt -s failglob
 set -o xtrace
 
 rm -Rf /vagrant/node_modules
-mkdir -p /usr/local/src/vagrant/node_modules
-chown vagrant:vagrant /usr/local/src/vagrant/node_modules
-ln -s /usr/local/src/vagrant/node_modules /vagrant/node_modules
+mkdir -p /var/tmp/vagrant/node_modules
+chown vagrant:vagrant /var/tmp/vagrant/node_modules
+ln -s /var/tmp/vagrant/node_modules /vagrant/node_modules
 
 export DEBIAN_FRONTEND=noninteractive
 curl -sL https://deb.nodesource.com/setup_iojs_1.x | sudo bash -
