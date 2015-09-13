@@ -36,6 +36,9 @@ if "%1" == "--version" (
 if "%1" == "version" (
     set NEEDS_ELEVATE="0"
 )
+if "%1" == "plugin" (
+    set NEEDS_ELEVATE="0"
+)
 
 :: Check if we are elevated
 FSUTIL dirty query %systemdrive% >nul
