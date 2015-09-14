@@ -91,11 +91,14 @@ IF '%1'=='' ( GOTO EndArgLoop ) else ( GOTO AddArg )
 
 
 if !DO_ELEVATE! EQU "1" (
+    :getfilename
+    SET FILENAME="%temp%\VAGRANT-BAT-ELEVATE-%RANDOM%%RANDOM%%RANDOM%.vbs"
+    IF EXIST "!FILENAME!" goto :getfilename
     ::Create and run the vb script to elevate the batch file
-    ECHO Set UAC = CreateObject^("Shell.Application"^) > "%temp%\OEgetPrivileges.vbs"
-    ECHO UAC.ShellExecute "cmd", "/k ""!QUOTED_PATH! !QUOTED_ARGS!""", "", "runas", 1 >> "%temp%\OEgetPrivileges.vbs"
-    ECHO "%temp%\OEgetPrivileges.vbs"
-    "%temp%\OEgetPrivileges.vbs"
+    ECHO CreateObject^("Scripting.FileSystemObject"^).DeleteFile^(Wscript.ScriptFullName^) > "!FILENAME!"
+    ECHO CreateObject^("Shell.Application"^).ShellExecute "cmd", "/k ""!QUOTED_PATH! !QUOTED_ARGS!""", "", "runas", 1 >> "!FILENAME!"
+    REM ECHO "!FILENAME!"
+    "!FILENAME!"
     EXIT /B
 )
 
