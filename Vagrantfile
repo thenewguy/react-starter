@@ -20,6 +20,8 @@ apt-get install -y iojs build-essential
 exec sudo -i -u vagrant /bin/bash -- << EOF
 cd /vagrant
 npm install
+cd node_modules/webpack-dev-server
+npm run prepublish
 
 EOF
 SCRIPT
