@@ -92,7 +92,7 @@ IF '%1'=='' ( GOTO EndArgLoop ) else ( GOTO AddArg )
 
 if !DO_ELEVATE! EQU "1" (
     :getfilename
-    SET FILENAME="%temp%\VAGRANT-BAT-ELEVATE-%RANDOM%%RANDOM%%RANDOM%.vbs"
+    SET FILENAME="%temp%\VAGRANT-BAT-ELEVATE-!RANDOM!!RANDOM!!RANDOM!.vbs"
     IF EXIST "!FILENAME!" goto :getfilename
     ::Create and run the vb script to elevate the batch file
     ECHO CreateObject^("Scripting.FileSystemObject"^).DeleteFile^(Wscript.ScriptFullName^) > "!FILENAME!"
