@@ -5,10 +5,6 @@ REM // AUTOMATIC PRIVILEGE ELEVATION CODE RESEARCHED FROM VARIOUS SOURCES USING 
 REM // http://stackoverflow.com/a/12264592/319862
 REM // http://stackoverflow.com/a/28467343/319862
 REM // http://ss64.com/vb/syntax-elevate.html
-REM //
-REM // IT MIGHT BE WORTH SWAPPING TO THIS VERSION BECAUSE IT IS
-REM // ISOLATED IN A SEPARATE BATCH FILE.  I FOUND IT AFTERWARDS
-REM // http://stackoverflow.com/questions/1894967/how-to-request-administrator-access-inside-a-batch-file/30590134#30590134
 
 
 setlocal EnableDelayedExpansion
