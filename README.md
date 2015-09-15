@@ -68,7 +68,7 @@ npm run dev-server
 npm run start-dev
 
 # open this url in your browser
-http://127.0.0.1:8080/
+http://localhost:8080/
 ```
 
 The configuration is `webpack-dev-server.config.js`.
@@ -90,7 +90,7 @@ npm run hot-dev-server
 npm run start-dev
 
 # open this url in your browser
-http://127.0.0.1:8080/
+http://localhost:8080/
 ```
 
 The configuration is `webpack-hot-dev-server.config.js`.
@@ -110,7 +110,7 @@ npm run build
 npm run start
 
 # open this url in your browser
-http://127.0.0.1:8080/
+http://localhost:8080/
 ```
 
 The configuration is `webpack-production.config.js`.
