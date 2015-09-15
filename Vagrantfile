@@ -54,8 +54,11 @@ Vagrant.configure("2") do |config|
         raise "Vagrant plugin 'vagrant-vbguest' is not installed! You must run 'vagrant plugin install vagrant-vbguest'! The 'vagrant-vbguest' plugin keeps your VirtualBox Guest Additions up to date in this box."
       end
       
-      # VirtualBox disables symlinks in synced folders by default for security
+      # Enable symlinks in synced folders
       v.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root", "1"]
+      
+      # Needed for NFS due to a limitation of VirtualBox's built-in networking
+      config.vm.network "private_network", type: "dhcp"
       
       v.memory = mem
       v.cpus = cpus
@@ -95,10 +98,6 @@ Vagrant.configure("2") do |config|
     end
     puts _script
     config.vm.provision "shell", inline: _script
-    
-    # This is due to a limitation of VirtualBox's built-in networking.  Needed for NFS.
-    # Set this globally to be consistent
-    config.vm.network "private_network", type: "dhcp"
     
     # For the benefits of using NFS to sync folders reference:
     #   http://mitchellh.com/comparing-filesystem-performance-in-virtual-machines
