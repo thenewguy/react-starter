@@ -45,7 +45,7 @@
     "url-loader": "^0.5.5",
     "uuid": "^2.0.1",
     "webpack": "^1.8.5",
-    "webpack-dev-server": "https://github.com/thenewguy/webpack-dev-server/archive/bind-all.tar.gz"
+    "webpack-dev-server": "^1.11.0"
   },
   "devDependencies": {
     "babel-eslint": "^3.0.1",
