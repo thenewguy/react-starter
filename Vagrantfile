@@ -96,7 +96,7 @@ Vagrant.configure("2") do |config|
     else
         _script = _SCRIPT % ""
     end
-    puts _script
+    
     config.vm.provision "shell", inline: _script
     
     # For the benefits of using NFS to sync folders reference:
